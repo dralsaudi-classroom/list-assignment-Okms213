@@ -67,17 +67,14 @@ public class LinkedList<T> implements List<T>{
         T mostFreq = null;
 
        	for(Node<T> outer_temp = head;outer_temp != null; outer_temp = outer_temp.next){
-            int currentCounter = 1;
+            if(mxCounter == 0)
+		    mostFreq = outer_temp.data;
             
-            for(Node<T> inner_temp = outer_temp.next;inner_temp != null;inner_temp = inner_temp.next){
-                if(inner_temp.data.equals(outer_temp.data))
-                    currentCounter++;
-                
-            }
-            if(currentCounter > mxCounter){
-                mxCounter = currentCounter;
-                mostFreq = outer_temp.data;
-            }
+           
+            else if(outer_temp.data.equals(mostFreq))
+		    mxCounter++;
+	    else
+		mxCounter--;
 
            
 
