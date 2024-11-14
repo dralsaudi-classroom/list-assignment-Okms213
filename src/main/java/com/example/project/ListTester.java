@@ -9,7 +9,7 @@ public class ListTester {
             if(!list.empty()){
                 while (!list.last())
                     list.findNext();
-
+//
                 
             }
 
